@@ -1,11 +1,13 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import express from 'express';
 
 const api = express();
 
-api.get("", () => {
+api.get("/", (req, res) => {
     res.send("KhoiDepTrai");
 })
 
-api.listen(5000, () => {
-    console.log("Server run on 5000");
+api.listen(process.env.PORT, () => {
+    console.log(`Server run on ${process.env.PORT}`);
 })
