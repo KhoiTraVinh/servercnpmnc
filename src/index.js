@@ -4,7 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { DataBase } from './config/db.js';
-import { Routes } from './Routes/index.js';
+import { Routes } from './routes/index.js';
 
 
 const api = express();
