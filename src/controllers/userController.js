@@ -1,4 +1,4 @@
-import User from '../Models/User.js';
+import User from '../models/user.js';
 import expressAsyncHandler from 'express-async-handler';
 import {Token} from '../middleware/JWT.js';
 import bcrypt from 'bcryptjs';
