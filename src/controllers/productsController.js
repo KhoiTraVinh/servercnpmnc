@@ -3,7 +3,7 @@ import expressAsyncHandler from 'express-async-handler';
 
 const getProducts = expressAsyncHandler(async (req, res) => {
     const products = await Products.find({});
-    if(voucher){
+    if(products){
         res.send(products)
     }else{
         res.status(404).send({message: 'No Products'});
