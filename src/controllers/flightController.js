@@ -26,6 +26,16 @@ const Create = expressAsyncHandler(async (req, res) => {
     })
 });
 
+
+const getAll  = expressAsyncHandler(async (req, res) => {
+    try{
+        const data = await Flight.find({});
+        return data;
+    }catch(e){
+        return e;
+    }
+});
+
 export const FlightController = {
     Create,
 }

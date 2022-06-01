@@ -33,7 +33,6 @@ const getTransactionValue = expressAsyncHandler(async (req, res) => {
     const voucher= vouchers.filter(x=>
         x.credit == false 
     )
-    console.log(voucher)
     if(voucher){
         res.send(voucher)
     }else{
