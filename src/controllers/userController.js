@@ -13,6 +13,7 @@ const Login = expressAsyncHandler(async (req, res) => {
                 email: user.email,
                 isAdmin: user.isAdmin,
                 token: Token(user),
+                message: "Login Success"
             });
             return;
         }
