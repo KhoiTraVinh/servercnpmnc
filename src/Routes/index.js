@@ -6,7 +6,7 @@ import {ProductsRouter} from './productsRouter.js';
 import {FlightRouter} from './flightRouter.js';
 import {HotelRouter} from './hotelRouter.js';
 
-Routes.use('/user', UserRouter);
+Routes.use('/auth', UserRouter);
 Routes.use('/voucher', VoucherRouter);
 Routes.use('/products', ProductsRouter);
 Routes.use('/flight', FlightRouter);

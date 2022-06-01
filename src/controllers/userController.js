@@ -22,7 +22,7 @@ const Login = expressAsyncHandler(async (req, res) => {
 
 const Register = expressAsyncHandler(async (req, res) => {
     const user = new User({
-        name : req.body.name,
+        username : req.body.fullName,
         email: req.body.email,
         password : bcrypt.hashSync(req.body.password, 8)
     });
