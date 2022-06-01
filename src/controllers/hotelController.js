@@ -1,36 +1,48 @@
 import Hotel from '../models/hotel.js';
 import expressAsyncHandler from 'express-async-handler';
 
-const getPlaneVoucher = expressAsyncHandler(async (req, res) => {
+const Create = expressAsyncHandler(async (req, res) => {
+    const hotel = new Hotel({
+        Name: req.body.Name,
+        Address: req.body.Address,
+        Price: req.body.Price,
+        Percent: req.body.Percent,
+        PriceDiscount: req.body.PriceDiscount,
+        Describe: req.body.Describe,
+        Room: req.body.Room
+    });
+    const created = await hotel.save();
+    res.send({
+        id: created.id,
+        Name: created.Name,
+        Address: created.Address,
+        Price: created.Price,
+        Percent: created.Percent,
+        PriceDiscount: created.PriceDiscount,
+        Flight: created.Flight,
+        Describe: created.Describe,
+        Room: created.Room,
+    })
 });
 
-const getHotelVoucher = expressAsyncHandler(async (req, res) => {
-   
+const getAll = expressAsyncHandler(async (req, res) => {
+    const hotels = await Hotel.find({});
+    res.send(hotels)
 });
 
-const getTransactionValue = expressAsyncHandler(async (req, res) => {
-    
+const getOne = expressAsyncHandler(async (req, res) => {
+    const hotel = await Hotel.findById(req.params.id);
+    if(hotel){
+        res.send(hotel);
+    }else{
+        res.status(404).send({message: 'Khong tin thay san pham'});
+    }
 });
 
 
-const createVoucher = expressAsyncHandler(async (req, res) => {
-   
-});
 
-
-const updateCredit = expressAsyncHandler(async (req, res) => {
-    
-});
-
-const updateUsed = expressAsyncHandler(async (req, res) => {
-    
-});
-
-export const UserController = {
-    getPlaneVoucher,
-    getHotelVoucher,
-    getTransactionValue,
-    createVoucher,
-    updateCredit,
-    updateUsed,
+export const HotelController = {
+    Create,
+    getAll,
+    getOne
 }

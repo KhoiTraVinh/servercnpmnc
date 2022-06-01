@@ -14,6 +14,7 @@ const getPlaneVoucher = expressAsyncHandler(async (req, res) => {
     }
 });
 
+
 const getHotelVoucher = expressAsyncHandler(async (req, res) => {
     const vouchers = await Voucher.find({});
     const voucher= vouchers.filter(x=>
