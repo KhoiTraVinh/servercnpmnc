@@ -28,7 +28,17 @@ const creatProducts = expressAsyncHandler(async (req, res) => {
     })
 });
 
+const getProduct = expressAsyncHandler(async (req, res) => {
+    const product = await Products.findById(req.params.id);
+    if(product){
+        res.send(product)
+    }else{
+        res.status(404).send({message: 'Not Found'});
+    }
+});
+
 export const ProductsController = {
     getProducts,
     creatProducts,
+    getProduct,
 }

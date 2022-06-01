@@ -9,11 +9,9 @@ const Login = expressAsyncHandler(async (req, res) => {
         if(bcrypt.compareSync(req.body.password, user.password)) {
             res.send({
                 _id: user._id,
-                name: user.name,
+                name: user.username,
                 email: user.email,
-                isAdmin: user.isAdmin,
                 token: Token(user),
-                message: "Login Success"
             });
             return;
         }
