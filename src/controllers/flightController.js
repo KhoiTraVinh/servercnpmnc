@@ -38,4 +38,5 @@ const getAll  = expressAsyncHandler(async (req, res) => {
 
 export const FlightController = {
     Create,
+    getAll,
 }
