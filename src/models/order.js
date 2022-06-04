@@ -18,5 +18,5 @@ const orderSchema = new database.Schema({
 {
     timestamps: true,
 });
-const Order = database.model('Order', orderSchema);
+const Order = database.model('KhuyenMai', orderSchema);
 export default Order;
