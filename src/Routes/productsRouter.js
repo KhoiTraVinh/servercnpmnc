@@ -4,3 +4,4 @@ import {ProductsController} from '../controllers/productsController.js';
 
 ProductsRouter.get('/', ProductsController.getProducts);
 ProductsRouter.post('/', ProductsController.creatProducts);
+ProductsRouter.post('/createCate', ProductsController.createCate);
