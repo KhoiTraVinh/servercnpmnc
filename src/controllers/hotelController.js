@@ -40,10 +40,26 @@ const getOne = expressAsyncHandler(async (req, res) => {
     }
 });
 
+const changeReserved = expressAsyncHandler(async (req, res) => {
+    const hotel = await Hotel.findById(req.body.idHotel);
+    if(hotel){
+        hotel.Room.map((room) => {
+            if(room.id == req.body.idRoom){
+                room.Reserved = true;
+            }
+        })
+        const updateHotel = await hotel.save();
+        res.send({ message: 'hotel updated', hotel: updateHotel });
+    }else{
+        res.status(404).send({message: 'Room not found'});
+    }
+});
+
 
 
 export const HotelController = {
     Create,
     getAll,
-    getOne
+    getOne,
+    changeReserved,
 }

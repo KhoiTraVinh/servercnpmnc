@@ -14,6 +14,7 @@ const PromotionSchema = new database.Schema({
         ref: 'Hotel',
         required: true,
     },
+    isPay: {type: Boolean, required: true, default: false},
 },
 {
     timestamps: true,

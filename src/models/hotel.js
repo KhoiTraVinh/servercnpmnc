@@ -16,7 +16,8 @@ const hotelSchema = new database.Schema({
             Refund: {type:String, required: true},
             Wifi: {type:String, required: true},
             EmptyRoom: {type: Number, required: true},
-            Price: {type: Number, required: true}
+            Price: {type: Number, required: true},
+            Reserved: {type: Boolean, default: false}
         },
     ],
 },
