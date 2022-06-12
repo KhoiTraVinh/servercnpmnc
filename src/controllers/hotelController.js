@@ -26,7 +26,8 @@ const Create = expressAsyncHandler(async (req, res) => {
 });
 
 const getAll = expressAsyncHandler(async (req, res) => {
-    const hotels = await Hotel.find({});
+    const text = req.body.Address;
+    const hotels = await Hotel.find({Address: { $regex: '.*' + text + '.*' } });
     res.send(hotels)
 });
 

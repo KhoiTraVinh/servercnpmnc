@@ -18,5 +18,5 @@ const PromotionSchema = new database.Schema({
 {
     timestamps: true,
 });
-const Order = database.model('Promotion', PromotionSchema);
-export default Order;
+const Promotion = database.model('Promotion', PromotionSchema);
+export default Promotion;

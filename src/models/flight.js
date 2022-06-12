@@ -10,7 +10,8 @@ const flightSchema = new database.Schema({
     Date: {type: Date, required: true},
     Type: {type: Boolean, default: false, required: true},
     Landing: {type: Boolean,  default: false, required: true},
-
+    seatclass: {type: String, required: true},
+    peonum: {type: Number, required: true},
 },
 {
     timestamps: true,

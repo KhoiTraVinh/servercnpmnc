@@ -10,6 +10,8 @@ const Create = expressAsyncHandler(async (req, res) => {
         Start: Date.now(),
         End: Date.now(),
         Date: req.body.value,
+        seatclass: req.body.seatclass,
+        peonum: req.body.peonum,
     });
     const created = await flight.save();
     res.send({
@@ -23,6 +25,8 @@ const Create = expressAsyncHandler(async (req, res) => {
         Date: created.Date,
         Type: created.Type,
         Landing: created.Landing,
+        seatclass: created.seatclass,
+        peonum: created.peonum,
     })
 });
 
