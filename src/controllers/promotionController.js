@@ -30,10 +30,7 @@ const post = expressAsyncHandler(async (req, res) => {
     const html2 = `
     <p>WE GOT IT!<p></br>
     <p>Hello ${req.body.name},<p>
-    <p>Thank you so much for reaching out! This auto-reply is just to let you know...</p></br>
-    <p>We received your email and will get back to you as soon as possible.</p></br>
-    <p>If you have any additional information that you think will help us to assist you, please feel free to reply to this email.</p>
-    <p>We look forward to chatting soon!</p></br>
+    <p>Cám ơn bạn đã mua combo</p></br>
     <p>Best regards,</p>
     <p>ComBoTietKiem</p>
     `
