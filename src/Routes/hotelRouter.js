@@ -10,3 +10,4 @@ HotelRouter.get('/order/', OrderController.getAll);
 HotelRouter.get('/:id', HotelController.getOne);
 HotelRouter.get('/order/one', OrderController.getOne);
 HotelRouter.put('/', HotelController.changeReserved);
+HotelRouter.get('/get/all', HotelController.get);

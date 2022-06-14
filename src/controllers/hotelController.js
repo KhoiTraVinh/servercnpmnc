@@ -31,6 +31,12 @@ const getAll = expressAsyncHandler(async (req, res) => {
     res.send(hotels)
 });
 
+
+const get = expressAsyncHandler(async (req, res) => {
+    const hotels = await Hotel.find({});
+    res.send(hotels)
+});
+
 const getOne = expressAsyncHandler(async (req, res) => {
     const hotel = await Hotel.findById(req.params.id);
     if(hotel){
@@ -62,4 +68,5 @@ export const HotelController = {
     getAll,
     getOne,
     changeReserved,
+    get,
 }
