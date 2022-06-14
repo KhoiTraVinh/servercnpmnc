@@ -46,8 +46,15 @@ const post = expressAsyncHandler(async (req, res) => {
 });
 
 
+const getAll = expressAsyncHandler(async (req, res) => {
+  const promos = await Promotion.find({});
+  res.send(promos)
+});
+
+
 
 export const PromotionController = {
     creatPromo,
     post,
+    getAll,
 }
