@@ -26,13 +26,13 @@ const creatPromo = expressAsyncHandler(async (req, res) => {
 
 const post = expressAsyncHandler(async (req, res) => {
   try {
-    const subject = `Cám ơn bạn đã mua combo tiết kiệm gồm: vé máy bay giá rẻ và khách sạn bên chúng tôi`
+    const subject = `Cám ơn bạn đã mua quần áo bên shop chúng tôi`
     const html2 = `
     <p>WE GOT IT!<p></br>
     <p>Hello ${req.body.name},<p>
-    <p>Cám ơn bạn đã mua combo</p></br>
+    <p>Cám ơn bạn đã mua hàng</p></br>
     <p>Best regards,</p>
-    <p>ComBoTietKiem</p>
+    <p>ShopQuanAo</p>
     `
     await sendMailContact(subject, req.body.email, html2);
     return res.status(200).json({
